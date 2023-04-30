@@ -1,6 +1,7 @@
 import React from "react";
 import Expense from "./components/Expenses/Expense";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const  App = () => {
   const expenses = [
@@ -36,7 +37,7 @@ const  App = () => {
   // import React가 필요없는 경우 => 최신버전 
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense />
         <Expense expenses = {expenses}/>
     </div>
   );
