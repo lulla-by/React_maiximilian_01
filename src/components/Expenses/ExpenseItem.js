@@ -22,6 +22,11 @@ const ExpenseItem = (props) => {
 
   const [title,setTitle] = useState(props.title)
 
+  // 상수(const)사용하는 이유
+  // 1) useState를 호출해서 리액트에게 어떤 값을 관리해야한다고 선언함
+  // 2) 변수 자체는 볼 수 없고 함수만 호출함. 
+  // 3) 그리고, 절대 등호연산자로 title에 새로운 값을 할당하지 않음 
+  //    => 그래서 상수형을 써도 괜찮음
 
   const clickHandler = ()=>{
     setTitle("updated!") 
