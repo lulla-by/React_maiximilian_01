@@ -26,6 +26,11 @@ const  App = () => {
     },
   ];
 
+  const addExpenseHandler = expense =>{
+    console.log("In App.js");
+    console.log(expense);
+  }
+
   //import React가 필요한 경우 => 구버전
   // return React.createElement(
   //   'div',
@@ -37,8 +42,8 @@ const  App = () => {
   // import React가 필요없는 경우 => 최신버전 
   return (
     <div>
-      <NewExpense />
-        <Expense expenses = {expenses}/>
+      <NewExpense onAddExpense={addExpenseHandler}/>
+        <Expense expenses = {expenses} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = ({onSaveExpensData}) => {
   // 1. 여러개의 state를 가지는 방법
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
@@ -51,7 +51,7 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
-    console.log(expenseData);
+    onSaveExpensData(expenseData);
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
