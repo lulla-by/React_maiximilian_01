@@ -1,6 +1,5 @@
 import React from "react";
 import Expense from "./components/Expenses/Expense";
-import ExpenseItem from "./components/Expenses/ExpenseItem";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 const  App = () => {
@@ -42,6 +41,7 @@ const  App = () => {
   // import React가 필요없는 경우 => 최신버전 
   return (
     <div>
+   
       <NewExpense onAddExpense={addExpenseHandler}/>
         <Expense expenses = {expenses} />
     </div>
