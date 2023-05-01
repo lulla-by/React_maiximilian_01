@@ -10,12 +10,13 @@ const Expense = (props) => {
   const filteredDate = (year) => {
     setFilteredYear(year);
   };
+  const filteredExpenses = props.expenses.filter((item)=>item.date.getFullYear() == filteredYear)
   return (
     <div>
       <Card className="expenses">
         <ExpensesFilter selected={filteredYear} onSaveDate={filteredDate} />
         {/* map()을 사용한 동적 렌더링 */}
-        {props.expenses.filter((item)=>item.date.getFullYear() == filteredYear).map(item => 
+        {filteredExpenses.map(item => 
           <ExpenseItem
           //  새로운 아이템의 추가시 아이템이 어디에 추가되는지 알려줘야 함
           //  그래서 아이템 목록이 출력되는 곳에서 특별한 props를 추가하여 해당 작업을 실행
