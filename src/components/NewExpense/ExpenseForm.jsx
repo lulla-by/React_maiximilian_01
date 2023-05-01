@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = ({onSaveExpensData}) => {
+const ExpenseForm = ({onSaveExpensData,stopEditingHandler}) => {
   // 1. 여러개의 state를 가지는 방법
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
@@ -55,6 +55,7 @@ const ExpenseForm = ({onSaveExpensData}) => {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
+    stopEditingHandler()
   };
 
   return (
@@ -91,6 +92,7 @@ const ExpenseForm = ({onSaveExpensData}) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={stopEditingHandler}>Cancel</button>
         <button type="submit">Add Expense</button>
         {/* 버튼의 타입이 서브밋이면 폼대신 클릭될경우 이 전체 폼 요소는 수신할 수 있는 이벤트를 생략 */}
       </div>
