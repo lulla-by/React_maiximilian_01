@@ -17,7 +17,7 @@ const Expense = (props) => {
         {/* map()을 사용한 동적 렌더링 */}
         {props.expenses.map(item => 
           <ExpenseItem
-            key={item.id}
+            // key={item.id}
             title={item.title}
             date={item.date}
             amount={item.amount}
